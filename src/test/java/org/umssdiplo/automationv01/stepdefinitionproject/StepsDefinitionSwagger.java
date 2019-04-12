@@ -6,7 +6,7 @@ import cucumber.api.java.en.Given;
 import org.umssdiplo.automationv01.core.managepage.Login.Login;
 import org.umssdiplo.automationv01.core.utils.LoadPage;
 
-public class StepsDefinitionPHPtravel {
+public class StepsDefinitionSwagger {
     private Login login;
 
     @Given("^'PHP travel' page is loaded$")
