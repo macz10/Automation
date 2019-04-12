@@ -15,6 +15,11 @@ public class StepsDefinitionSwagger {
         employee = LoadPage.employee();
     }
 
+    @And("^setCredentials$")
+    public void setCredentials() {
+        employee.setCredentials();
+    }
+
     @And("^clickAddEmployee$")
     public void clickAddEmployee() throws Throwable {
         employee.clickAddEmployee();
@@ -24,12 +29,43 @@ public class StepsDefinitionSwagger {
     public void clickEditBtn() throws Throwable {
         employee.clickEditBtn();
     }
+
     @And("^clickDeleteBtn$")
     public void clickDeleteBtn() throws Throwable {
         employee.clickDeleteBtn();
     }
+
     @And("^clickRefresh$")
     public void clickRefresh() throws Throwable {
         employee.clickRefresh();
     }
+
+    @And("^add 'Employee' data$")
+    public void addNewEmployee() throws Throwable{
+       // employee.clickAddEmployee();
+        fillData();
+        employee.clickCreateButton();
+    }
+
+    @And("^edit 'Employee' data$")
+    public void EditNewEmployee() throws Throwable{
+        employee.clickDeleteEditButton(1,1);
+        fillData();
+        employee.clickCreateButton();
+    }
+
+
+    private void fillData(){
+        employee.fillFirstName("Carlos1");
+        employee.fillLastName("Camacho1");
+        employee.fillCi("5188819");
+        employee.fillGender("MALE");
+        employee.fillAddress("J. E. Molina");
+        employee.fillDOB("08/08/1982");
+        employee.fillPhone("79324048");
+        employee.fillEmailField("a@a.com");
+        employee.fillEmployeeType("Electricista");
+        employee.fillSalaryField("158");
+    }
+
 }
