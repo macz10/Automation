@@ -7,7 +7,10 @@ Feature: Employee
     And add 'Employee' data
    # And setCredentials
   Scenario:Update
+    Given 'Employee List' page is loaded
     And edit 'Employee' data
+
   Scenario: Delete
+    Given 'Employee List' page is loaded
    And clickDeleteBtn
    And clickRefresh

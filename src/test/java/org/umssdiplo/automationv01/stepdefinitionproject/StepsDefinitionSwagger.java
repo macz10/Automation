@@ -49,7 +49,7 @@ public class StepsDefinitionSwagger {
 
     @And("^edit 'Employee' data$")
     public void EditNewEmployee() throws Throwable{
-        employee.clickDeleteEditButton(1,1);
+        employee.clickDeleteEditButton(1,2);
         fillData();
         employee.clickCreateButton();
     }
