@@ -51,6 +51,11 @@ public class Employee extends BasePage {
     @FindBy(css ="button.btn.btn-danger[type='button']")
     private WebElement cancelButton;
 
+    @FindBy(css= ".table.table-striped >tbody>tr")
+    private  WebElement rowsEmployee;
+
+
+
    private WebElement buttonDeleteEditItem(int rowNumber, int deleteEdit){
         String cssPath = ".table > tbody:nth-child(2) > tr:nth-child(" + rowNumber +") > td:nth-child(9) > button:nth-child(" + deleteEdit +")";
         WebElement deleteButton = webDriver.findElement(By.cssSelector(cssPath));
@@ -144,5 +149,9 @@ public class Employee extends BasePage {
     public void clickDeleteEditButton(int rowNumber, int deleteEdit){
         WebElement fila1 = buttonDeleteEditItem(rowNumber,deleteEdit);
         fila1.click();
+    }
+
+    public void getLastNameEmployee(){
+
     }
 }

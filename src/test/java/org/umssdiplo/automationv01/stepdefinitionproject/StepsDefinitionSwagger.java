@@ -3,6 +3,8 @@ package org.umssdiplo.automationv01.stepdefinitionproject;
 import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
+import org.testng.Assert;
+import org.testng.asserts.Assertion;
 import org.umssdiplo.automationv01.core.managepage.Employee.Employee;
 import org.umssdiplo.automationv01.core.managepage.Login.Login;
 import org.umssdiplo.automationv01.core.utils.LoadPage;
@@ -55,6 +57,7 @@ public class StepsDefinitionSwagger {
     }
 
 
+
     private void fillData(){
         employee.fillFirstName("Carlos1");
         employee.fillLastName("Camacho1");
@@ -68,4 +71,10 @@ public class StepsDefinitionSwagger {
         employee.fillSalaryField("158");
     }
 
+    @And("^verify \"([^\"]*)\" is displayed in 'Employee' page$")
+    public void verifyIsDisplayedInEmployeePage(String nameEmployeeExpected) throws Throwable {
+        String nameEmployActual = employee.getLastNameEmployee();
+
+        Assert.assertEquals(nameEmployActual, nameEmployeeExpected, "error message ");
+    }
 }

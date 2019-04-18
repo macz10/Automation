@@ -5,6 +5,7 @@ Feature: Employee
     Given 'Employee List' page is loaded
     And clickAddEmployee
     And add 'Employee' data
+    And verify "abc dato input" is displayed in 'Employee' page
    # And setCredentials
   Scenario:Update
     Given 'Employee List' page is loaded
@@ -12,5 +13,5 @@ Feature: Employee
 
   Scenario: Delete
     Given 'Employee List' page is loaded
-   And clickDeleteBtn
-   And clickRefresh
+    And clickDeleteBtn
+    And clickRefresh
