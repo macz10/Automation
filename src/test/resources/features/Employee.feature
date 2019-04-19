@@ -5,7 +5,7 @@ Feature: Employee
     Given 'Employee List' page is loaded
     And clickAddEmployee
     And add 'Employee' data
-    And verify "abc dato input" is displayed in 'Employee' page
+    And verify "Carlos" is displayed in 'Employee' page
    # And setCredentials
   Scenario:Update
     Given 'Employee List' page is loaded

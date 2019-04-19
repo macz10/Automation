@@ -7,6 +7,8 @@ import org.umssdiplo.automationv01.core.managepage.BasePage;
 import org.umssdiplo.automationv01.core.utils.CommonEvents;
 import org.umssdiplo.automationv01.core.utils.PropertyAccessor;
 
+import java.util.List;
+
 
 public class Employee extends BasePage {
     @FindBy(css = ".btn.btn-success")
@@ -53,6 +55,9 @@ public class Employee extends BasePage {
 
     @FindBy(css= ".table.table-striped >tbody>tr")
     private  WebElement rowsEmployee;
+
+    @FindBy(css = ".table.table-striped  > tbody >tr")
+    private List<WebElement> employeeRows;
 
 
 
@@ -151,7 +156,10 @@ public class Employee extends BasePage {
         fila1.click();
     }
 
-    public void getLastNameEmployee(){
-
+    public String getLastNameEmployee(){
+        WebElement lastElement = employeeRows.get(employeeRows.size()-1);
+        List<WebElement> deleteButton = lastElement.findElements(By.cssSelector("td"));
+        String name = deleteButton.get(1).getText();
+        return name;
     }
 }

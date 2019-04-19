@@ -3,6 +3,7 @@ package org.umssdiplo.automationv01.stepdefinitionproject;
 import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
 import org.testng.Assert;
 import org.testng.asserts.Assertion;
 import org.umssdiplo.automationv01.core.managepage.Employee.Employee;
@@ -77,4 +78,11 @@ public class StepsDefinitionSwagger {
 
         Assert.assertEquals(nameEmployActual, nameEmployeeExpected, "error message ");
     }
+/*
+    @Then("^verify \"([^\"]*)\" is displayed in Employee page$")
+//    public void verifyIsDisplayedInEmployeePage(String nameEmployeeExpected) throws Throwable {
+    public void verifyIsDisplayedInEmployeePage(String nameEmployeeExpected) throws Throwable {
+        String nameEmployActual = employeeListPage.getLastNameEmployee();
+        Assert.assertEquals(nameEmployActual, nameEmployeeExpected, "error message ");
+    }*/
 }
